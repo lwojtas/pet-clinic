@@ -4,11 +4,13 @@ import com.google.common.collect.Sets;
 import it.wojtas.petclinic.model.Speciality;
 import it.wojtas.petclinic.repositories.SpecialityRepository;
 import it.wojtas.petclinic.service.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class VetSpecialityJpaService implements SpecialityService {
 
     private final SpecialityRepository specialityRepository;

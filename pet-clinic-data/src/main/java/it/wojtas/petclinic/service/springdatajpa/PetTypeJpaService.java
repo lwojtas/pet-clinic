@@ -4,11 +4,13 @@ import com.google.common.collect.Sets;
 import it.wojtas.petclinic.model.PetType;
 import it.wojtas.petclinic.repositories.PetTypeRepository;
 import it.wojtas.petclinic.service.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile("springdatajpa")
 public class PetTypeJpaService implements PetTypeService {
 
     private final PetTypeRepository petTypeRepository;

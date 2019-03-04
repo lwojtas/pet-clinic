@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true, exclude = "visits")
 @Data
 @Entity
 @Table(name = "pets")
@@ -27,4 +27,9 @@ public class Pet extends BaseEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
     private Set<Visit> visits = new HashSet<>();
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
