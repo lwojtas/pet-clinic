@@ -1,9 +1,6 @@
 package it.wojtas.petclinic.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -13,6 +10,7 @@ import javax.persistence.MappedSuperclass;
 @Getter
 @AllArgsConstructor
 @MappedSuperclass
+@NoArgsConstructor
 public class Person extends BaseEntity {
 
     @Column(name = "first_name")

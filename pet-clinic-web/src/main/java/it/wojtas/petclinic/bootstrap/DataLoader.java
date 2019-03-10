@@ -65,7 +65,7 @@ public class DataLoader implements CommandLineRunner {
         pet1.setOwner(owner1);
         pet1.setName("Rex");
 
-        owner1.getPets().add(pet1);
+        owner1.setPets(Sets.newHashSet(pet1));
         ownerService.save(owner1);
 
         Owner owner2 = Owner.builder()
@@ -74,13 +74,14 @@ public class DataLoader implements CommandLineRunner {
                 .address("Przebieczany")
                 .city("Wieliczka")
                 .phone("73465943")
+                .pets(Sets.newHashSet())
                 .build();
 
         Pet pet2 = new Pet();
         pet2.setPetType(savedCat);
         pet2.setBirthday(LocalDate.of(2015, 10, 4));
         pet2.setOwner(owner2);
-        pet2.setName("Guiness");
+        pet2.setName("Guinness");
 
         owner2.getPets().add(pet2);
 

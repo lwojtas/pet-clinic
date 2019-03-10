@@ -2,6 +2,7 @@ package it.wojtas.petclinic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,6 +12,7 @@ import java.io.Serializable;
 
 @Data
 @MappedSuperclass
+@NoArgsConstructor
 public class BaseEntity implements Serializable {
 
     @Id
