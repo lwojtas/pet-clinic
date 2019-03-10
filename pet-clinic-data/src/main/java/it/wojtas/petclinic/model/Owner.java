@@ -1,7 +1,9 @@
 package it.wojtas.petclinic.model;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -13,8 +15,18 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true, exclude = "pets")
 @Data
 @Entity
+@Getter
 @Table(name = "owners")
 public class Owner extends Person {
+
+    @Builder
+    public Owner(Long id, String firstName, String lastName, String address, String city, String phone, Set<Pet> pets) {
+        super(firstName, lastName);
+        this.address = address;
+        this.city = city;
+        this.phone = phone;
+        this.pets = pets;
+    }
 
     private String address;
 

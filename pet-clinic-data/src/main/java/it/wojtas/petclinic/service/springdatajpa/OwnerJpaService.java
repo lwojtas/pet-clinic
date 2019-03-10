@@ -3,8 +3,6 @@ package it.wojtas.petclinic.service.springdatajpa;
 import com.google.common.collect.Sets;
 import it.wojtas.petclinic.model.Owner;
 import it.wojtas.petclinic.repositories.OwnerRepository;
-import it.wojtas.petclinic.repositories.PetRepository;
-import it.wojtas.petclinic.repositories.PetTypeRepository;
 import it.wojtas.petclinic.service.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

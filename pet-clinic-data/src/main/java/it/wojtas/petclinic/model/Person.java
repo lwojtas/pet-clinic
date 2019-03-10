@@ -1,13 +1,17 @@
 package it.wojtas.petclinic.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Getter
+@AllArgsConstructor
 @MappedSuperclass
 public class Person extends BaseEntity {
 
