@@ -1,5 +1,6 @@
 package it.wojtas.petclinic.bootstrap;
 
+import com.google.common.collect.Sets;
 import it.wojtas.petclinic.model.*;
 import it.wojtas.petclinic.service.OwnerService;
 import it.wojtas.petclinic.service.PetTypeService;
@@ -52,12 +53,11 @@ public class DataLoader implements CommandLineRunner {
         specialityService.save(radiology);
         specialityService.save(dentist);
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Michael");
-        owner1.setLastName("Weston");
-        owner1.setAddress("Tomaszkowice");
-        owner1.setCity("Wieliczka");
-        owner1.setPhone("246452526");
+        Owner owner1 = Owner.builder().firstName("Michael")
+                .lastName("Weston")
+                .address("Tomaszkowice")
+                .city("Wieliczka")
+                .phone("246452526").build();
 
         Pet pet1 = new Pet();
         pet1.setPetType(savedDog);
@@ -68,12 +68,13 @@ public class DataLoader implements CommandLineRunner {
         owner1.getPets().add(pet1);
         ownerService.save(owner1);
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Fiona");
-        owner2.setLastName("Glenanne");
-        owner2.setAddress("Przebieczany");
-        owner2.setCity("Wieliczka");
-        owner2.setPhone("73465943");
+        Owner owner2 = Owner.builder()
+                .firstName("Fiona")
+                .lastName("Glenanne")
+                .address("Przebieczany")
+                .city("Wieliczka")
+                .phone("73465943")
+                .build();
 
         Pet pet2 = new Pet();
         pet2.setPetType(savedCat);
@@ -85,18 +86,19 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(owner2);
 
-        Vet vet1 = new Vet();
-        vet1.setFirstName("Sam");
-        vet1.setLastName("Axe");
-        vet1.getSpecialities().add(surgery);
-        vet1.getSpecialities().add(dentist);
+        Vet vet1 = Vet.builder()
+                .firstName("Sam")
+                .lastName("Axe")
+                .specialities(Sets.newHashSet(surgery, dentist))
+                .build();
 
         vetService.save(vet1);
 
-        Vet vet2 = new Vet();
-        vet2.setFirstName("Jessie");
-        vet2.setLastName("Porter");
-        vet2.getSpecialities().add(radiology);
+        Vet vet2 = Vet.builder()
+                .firstName("Jessie§")
+                .lastName("Porter")
+                .specialities(Sets.newHashSet(radiology))
+                .build();
 
         vetService.save(vet2);
 

@@ -26,6 +26,7 @@ public class Owner extends Person {
         this.city = city;
         this.phone = phone;
         this.pets = pets;
+        setId(id);
     }
 
     private String address;

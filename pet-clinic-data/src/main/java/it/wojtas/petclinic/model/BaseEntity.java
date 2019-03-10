@@ -1,5 +1,6 @@
 package it.wojtas.petclinic.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.GeneratedValue;
